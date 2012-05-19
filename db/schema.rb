@@ -11,13 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120519112303) do
+ActiveRecord::Schema.define(:version => 20120519121436) do
 
   create_table "data_sets", :force => true do |t|
     t.string   "chromosome"
     t.integer  "start_point", :limit => 8
     t.integer  "end_point",   :limit => 8
-    t.integer  "y_point",     :limit => 8
+    t.decimal  "y_point"
     t.string   "probe"
     t.datetime "created_at",               :null => false
     t.datetime "updated_at",               :null => false
