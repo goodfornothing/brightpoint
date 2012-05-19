@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120519143832) do
+ActiveRecord::Schema.define(:version => 20120519151230) do
 
   create_table "annotations", :force => true do |t|
     t.integer  "classification_id"
@@ -19,9 +19,9 @@ ActiveRecord::Schema.define(:version => 20120519143832) do
     t.datetime "updated_at",        :null => false
   end
 
-  create_table "annotations_data_sets", :force => true do |t|
+  create_table "annotations_data_points", :force => true do |t|
     t.integer "annotation_id"
-    t.integer "data_set_id"
+    t.integer "data_point_id"
   end
 
   create_table "classifications", :force => true do |t|
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(:version => 20120519143832) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "data_sets", :force => true do |t|
+  create_table "data_points", :force => true do |t|
     t.string   "chromosome"
     t.integer  "start_point", :limit => 8
     t.integer  "end_point",   :limit => 8
@@ -41,15 +41,15 @@ ActiveRecord::Schema.define(:version => 20120519143832) do
     t.datetime "updated_at",               :null => false
   end
 
-  add_index "data_sets", ["chromosome"], :name => "index_data_sets_on_chromosome"
-  add_index "data_sets", ["end_point"], :name => "index_data_sets_on_end_point"
-  add_index "data_sets", ["probe"], :name => "index_data_sets_on_probe"
-  add_index "data_sets", ["start_point"], :name => "index_data_sets_on_start_point"
-  add_index "data_sets", ["y_point"], :name => "index_data_sets_on_y_point"
+  add_index "data_points", ["chromosome"], :name => "index_data_sets_on_chromosome"
+  add_index "data_points", ["end_point"], :name => "index_data_sets_on_end_point"
+  add_index "data_points", ["probe"], :name => "index_data_sets_on_probe"
+  add_index "data_points", ["start_point"], :name => "index_data_sets_on_start_point"
+  add_index "data_points", ["y_point"], :name => "index_data_sets_on_y_point"
 
-  create_table "data_sets_subjects", :force => true do |t|
+  create_table "data_points_subjects", :force => true do |t|
     t.integer "subject_id"
-    t.integer "data_set_id"
+    t.integer "data_point_id"
   end
 
   create_table "subjects", :force => true do |t|

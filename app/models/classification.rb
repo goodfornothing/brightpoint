@@ -1,13 +1,11 @@
 class Classification < ActiveRecord::Base
   
-  belongs_to :user
-  belongs_to :subject
-  has_and_belongs_to_many :data_sets
-
-  has_many :annotations, :dependent => :destroy 
-  scope :between, lambda { |from, to| {:conditions => ['created_at between ? and ?', from, to] }}
+   belongs_to :user
+   belongs_to :subject
+   has_many :data_points, :through => :subject
+   has_many :annotations, :dependent => :destroy 
   
-  def self.create_with_result(result)
+   def self.create_with_result(result)
    #light_curve = result.delete(:light_curves).first
    #annotations = result.delete(:annotations)
 
@@ -58,6 +56,14 @@ class Classification < ActiveRecord::Base
    #  saved = false
    #end
    #saved
+   end
+
+   def as_json(opts = {})
+    {
+      id: id,
+      annotations: annotations,
+      user: user
+    }
   end
   
 end

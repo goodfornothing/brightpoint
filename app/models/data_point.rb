@@ -1,4 +1,5 @@
-class DataSet < ActiveRecord::Base
+class DataPoint < ActiveRecord::Base
+  
   attr_accessible :chromosome, :end_point, :probe, :start_point, :y_point
   
   has_and_belongs_to_many :subjects
@@ -6,11 +7,11 @@ class DataSet < ActiveRecord::Base
 
   def as_json(opts = {})
     {
-      start_point: start_point,
-      end_point: end_point,
-      y_point: y_point.to_f,
-      probe: probe,
+      start: start_point,
+      end: end_point,
+      y: y_point.to_f,
       chromosome: chromosome
     }
   end
+
 end

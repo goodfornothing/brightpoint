@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class DataSetTest < ActiveSupport::TestCase
+class DataPointTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

@@ -21,7 +21,7 @@ task :import_data => :environment do
     # ["chr1", "192255266", "192255316", "CHR01FS192255266", "0.0395049658720801\n"]
     
     if array[4] && array[0] != 'Chromosome'
-      DataSet.create(chromosome: array[0], start_point: array[1], end_point: array[2], probe: array[3], y_point: array[4].strip.to_f)
+      DataPoint.create(chromosome: array[0], start_point: array[1], end_point: array[2], probe: array[3], y_point: array[4].strip.to_f)
       print "Importing #{count} from Dataset1DEMOdata2 \r"
         count+=1
     end
@@ -35,7 +35,7 @@ task :import_data => :environment do
     
     if array[3] && array[0] != 'Name'
       # p array[4].strip.to_f
-      DataSet.create(probe: array[0], chromosome: "chr" + array[1], start_point: array[2].to_i - 12, end_point: array[2].to_i + 12, y_point: array[3].strip.to_f)
+      DataPoint.create(probe: array[0], chromosome: "chr" + array[1], start_point: array[2].to_i - 12, end_point: array[2].to_i + 12, y_point: array[3].strip.to_f)
       print "Importing #{count} from Metabric_SNP6 \r"
       count+=1
     end
