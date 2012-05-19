@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  chromosome: MyString
+  start_point: 1
+  end_point: 1
+  y_point: 
+  probe: MyString
+
+two:
+  chromosome: MyString
+  start_point: 1
+  end_point: 1
+  y_point: 
+  probe: MyString
