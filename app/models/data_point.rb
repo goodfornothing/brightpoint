@@ -9,8 +9,7 @@ class DataPoint < ActiveRecord::Base
     {
       start: start_point,
       end: end_point,
-      y: y_point.to_f,
-      chromosome: chromosome
+      y: y_point.to_f
     }
   end
 
