@@ -20,7 +20,7 @@ task :import_data => :environment do
     
     # ["chr1", "192255266", "192255316", "CHR01FS192255266", "0.0395049658720801\n"]
     
-    if array[4]
+    if array[4] && array[0] != 'Chromosome'
       DataSet.create(chromosome: array[0], start_point: array[1], end_point: array[2], probe: array[3], y_point: array[4].strip.to_f)
       print "Importing #{count} from Dataset1DEMOdata2 \r"
         count+=1
