@@ -60,9 +60,8 @@ class Classification < ActiveRecord::Base
 
    def as_json(opts = {})
     {
-      id: id,
-      annotations: annotations,
-      user: user
+      user: user,
+      annotations: annotations
     }
   end
   

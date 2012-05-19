@@ -7,7 +7,7 @@ class Api::V1::SubjectsController < ApplicationController
 		respond_with @subjects
 	end
 
-	def random
+	def next
 		@subject = Subject.first
 		respond_with @subject
 	end

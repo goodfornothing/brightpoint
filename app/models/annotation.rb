@@ -5,7 +5,6 @@ class Annotation < ActiveRecord::Base
 
 	def as_json(opts = {})
     {
-      id: id,
       data_points: data_points
     }
   end

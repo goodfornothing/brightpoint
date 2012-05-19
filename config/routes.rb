@@ -6,7 +6,7 @@ Brightpoint::Application.routes.draw do
     namespace :v1  do
     	get "data_points" => "data_points#index"
     	get "subjects" => "subjects#index"
-      get "subjects/random" => "subjects#random"
+      get "subjects/next" => "subjects#next"
       get "classifications/new" => "classifications#new"
     end
   end
