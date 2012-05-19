@@ -17,7 +17,7 @@ development:
   encoding: unicode
   database: brightpoint_development
   pool: 5
-  username: alex
+  username: postgres
   password:
   host: localhost
   port: 5432
@@ -27,7 +27,7 @@ test:
   encoding: unicode
   database: brightpoint_test
   pool: 5
-  username: alex
+  username: postgres
   password:
   host: localhost
   port: 5432
@@ -37,5 +37,5 @@ production:
   encoding: unicode
   database: brightpoint_production
   pool: 5
-  username: alex
+  username: postgres
   password:
