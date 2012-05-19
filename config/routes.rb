@@ -4,7 +4,7 @@ Brightpoint::Application.routes.draw do
 
   namespace :api do
     namespace :v1  do
-    	get "data_points" => "data_sets#index"
+    	get "data_points" => "data_points#index"
     	get "subjects" => "subjects#index"
       get "subjects/random" => "subjects#random"
       get "classifications/new" => "classifications#new"

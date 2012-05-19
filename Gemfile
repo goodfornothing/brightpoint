@@ -9,6 +9,7 @@ gem 'pg'
 gem 'devise'
 gem 'devise-twitter'
 gem 'omniauth'
+gem 'thin'
 
 # Gems used only for assets and not required
 # in production environments by default.
