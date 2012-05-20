@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   	# if density > then easy medium hard
 
-    @subject = Subject.where('id > ?',previous_subject).first
+    @subject = Subject.where('id > ?',previous_subject).first if previous_subject
 
     if @subject.nil?
     	@subject = Subject.create!

@@ -7,7 +7,7 @@ Brightpoint::Application.routes.draw do
     	get "data_points" => "data_points#index"
       get "chromosome/:chromosome" => "data_points#chromosome"
     	get "subjects" => "subjects#index"
-      get "subjects/next" => "subjects#first"
+      get "subjects/next" => "subjects#next"
       get "subjects/:previous_subject/next" => "subjects#next"
       get "subjects/:subject/annotations" => "annotations#index"
       get "subjects/:subject/classifications" => "classifications#index"
