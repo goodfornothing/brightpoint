@@ -11,7 +11,7 @@ GET http://brightpoint.herokuapp.com/api/v1/subjects.json
 ### Fetch a new subject 
 
 ```bash
-GET http://brightpoint.herokuapp.com/api/v1/subjects/random.json
+GET http://brightpoint.herokuapp.com/api/v1/subjects/next.json
 ```
 
 ### Fetch all classifications and annotations for a given subject
