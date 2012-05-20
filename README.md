@@ -8,10 +8,10 @@ The following endpoints should closely match the Citizen Science platform.
 GET http://brightpoint.herokuapp.com/api/v1/subjects.json
 ```
 
-### Fetch a new subject
+### Fetch a new subject 
 
 ```bash
-GET http://brightpoint.herokuapp.com/api/v1/subjects/next.json
+GET http://brightpoint.herokuapp.com/api/v1/subjects/random.json
 ```
 
 ### Fetch all classifications and annotations for a given subject
@@ -52,6 +52,12 @@ curl -F 'subject_id=1' \
 ```
 
 ## Endpoints unique to BrightPoint
+
+### Fetch all data points
+
+```bash
+GET http://brightpoint.herokuapp.com/api/v1/data_points.json?start_point=390&size=100
+```
 
 ### Fetch all data points for a single chromosome
 
