@@ -25,7 +25,7 @@ GET http://brightpoint.herokuapp.com/api/v1/subjects/:subject_id/classifications
 ### Create a new classification for a given subject
 
 ```bash
-POST (or GET with JSONP) http://brightpoint.herokuapp.com/api/v1/subjects/:subject_id/classifications/new.json
+http://brightpoint.herokuapp.com/api/v1/subjects/:subject_id/classifications/new.json
 ```
 
 With params:
