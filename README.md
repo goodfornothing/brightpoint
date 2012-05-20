@@ -30,10 +30,10 @@ POST http://brightpoint.herokuapp.com/api/v1/classifications/new.json
 
 With params:
 
-subject_id: integer
-started: timestamp
-ended: timestamp
-annotations: array of annotations containing a start and end x-coordinate
+- subject_id: integer
+- started: timestamp
+- ended: timestamp
+- annotations: array of annotations containing a start and end x-coordinate
 
 For example:
 

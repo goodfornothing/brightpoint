@@ -15,6 +15,10 @@ class Api::V1::DataPointsController < ApplicationController
     maximum = y_points.max
     minimum = y_points.min
 
+    x_points = @data_points.map{|dp| dp.start_point}
+    maximum_x = x_points.max
+    minimum_x = x_points.min
+
     @gp = @data_points.group_by{|dp| dp.start_point}
     @grouped_points = Array.new
     @gp.each do |start,values|
@@ -31,6 +35,8 @@ class Api::V1::DataPointsController < ApplicationController
         name: params[:chromosome],
         maximum: maximum,
         minimum: minimum,
+        maximum_x: maximum_x,
+        minimum_x: minimum_x,
         data_points: @grouped_points
       }
     }
