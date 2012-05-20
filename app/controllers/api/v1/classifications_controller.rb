@@ -19,7 +19,7 @@ class Api::V1::ClassificationsController < ApplicationController
       :ended => params[:ended]
     )
 
-  	@subject = Subject.find(params[:subject_id])
+  	@subject = Subject.find(params[:subject])
   	@classification.subject = @subject
 
   	if @classification.valid?

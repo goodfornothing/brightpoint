@@ -10,7 +10,7 @@ Brightpoint::Application.routes.draw do
       get "subjects/next" => "subjects#first"
       get "subjects/:previous_subject/next" => "subjects#next"
       get "subjects/:subject/classifications" => "classifications#index"
-      match "classifications" => "classifications#create"
+      match "subjects/:subject/classifications/new" => "classifications#create"
     end
   end
 
