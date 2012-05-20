@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   def subject_of_grade(grade,previous_subject)
 
-    previous_subject || 0
+    previous_subject = 0 if previous_subject.nil?
     @subject = Subject.where('id > ?',previous_subject).first
 
     return @subject
