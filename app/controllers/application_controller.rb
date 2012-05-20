@@ -3,14 +3,8 @@ class ApplicationController < ActionController::Base
 
   def subject_of_grade(grade,previous_subject)
 
-  	# if density > then easy medium hard
-
-    @subject = Subject.where('id > ?',previous_subject).first if previous_subject
-
-    if @subject.nil?
-    	@subject = Subject.create!
-    	@subject.data_points = DataPoint.limit(3000)
-    end
+    previous_subject || 0
+    @subject = Subject.where('id > ?',previous_subject).first
 
     return @subject
 

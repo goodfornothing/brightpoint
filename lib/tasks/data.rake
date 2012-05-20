@@ -1,4 +1,29 @@
 desc 'Import the data'
+
+task :segment_data => :environment do 
+
+  # TODO: if density > then easy medium hard
+
+  Subject.destroy_all
+
+  p "Getting max and min"
+  minimum_x = DataPoint.minimum(:start_point)
+  maximum_x = DataPoint.maximum(:start_point)
+
+  start_x = minimum_x
+  end_x = 2_000_000
+
+  while start_x < maximum_x do 
+    p "Creating segment between #{start_x} and #{end_x}"
+    @subject = Subject.new
+    @subject.data_points = DataPoint.where(:start_point => start_x..end_x)
+    @subject.save
+    start_x = end_x
+    end_x = start_x + 2_000_000
+  end
+
+end
+
 task :import_data => :environment do
   
   count = 1

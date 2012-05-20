@@ -11,11 +11,7 @@ class Api::V1::SubjectsController < ApplicationController
 	end
 
 	def next
-		if params[:previous_subject].nil?
-			@subject = subject_of_grade([params[:grade]||'easy'],params[:previous_subject])
-		else
-			@subject = subject_of_grade([params[:grade]||'easy'],false)
-		end
+		@subject = subject_of_grade([params[:grade]||'easy'],params[:previous_subject])
 		respond_with @subject
 	end
 
