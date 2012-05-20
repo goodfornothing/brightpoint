@@ -28,7 +28,7 @@ POST http://brightpoint.herokuapp.com/api/v1/classifications/new.json
 
 With params:
 
-```json			
+```javascript		
 {
 	subject_id: integer
 	started: timestamp
