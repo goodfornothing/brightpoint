@@ -30,8 +30,7 @@ class Api::V1::ClassificationsController < ApplicationController
   			# start and end point on the x-axis for a particular subject rather 
   			# than having our clients pass back a list of data_points
 
-  			#d = @subject....filter where chromosome = subject.chromosone and x is between a.start and a.end
-  			data_points = @subject.data_sets
+  			data_points = @subject.data_points.delete_if{ |x| !(x.start_point <= a.start_point || x.end_point >= a.end_point) }
 
   			# Create the annotation
   			a = Annotation.new(

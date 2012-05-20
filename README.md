@@ -1,5 +1,4 @@
-Brightpoint API
-===============
+## Brightpoint API
 
 ### Fetch all data points
 
