@@ -5,6 +5,7 @@ Brightpoint::Application.routes.draw do
   namespace :api do
     namespace :v1  do
     	get "data_points" => "data_points#index"
+      get "chromosome/:chromosome" => "data_points#chromosome"
     	get "subjects" => "subjects#index"
       get "subjects/next" => "subjects#next"
       get "subjects/:subject/classifications" => "classifications#index"

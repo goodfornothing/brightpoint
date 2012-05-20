@@ -62,5 +62,5 @@ GET http://brightpoint.herokuapp.com/api/v1/data_points.json?start_point=390&siz
 ### Fetch all data points for a single chromosome
 
 ```bash
-GET http://brightpoint.herokuapp.com/api/v1/chromosome/ch1/
+GET http://brightpoint.herokuapp.com/api/v1/chromosome/chr1.json?size=100
 ```
