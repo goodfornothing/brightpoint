@@ -4,10 +4,10 @@ Brightpoint API
 ### Fetch all data points
 
 ```bash
-GET  	http://brightpoint.herokuapp.com/api/v1/data_points.json
+[GET] http://brightpoint.herokuapp.com/api/v1/data_points.json
  
-start_point (return points after this x-axis)
-size (the number of points to return)
+start_point # (return points after this x-axis)
+size # (the number of points to return)
 ```
 
 ### Fetch all subjects
