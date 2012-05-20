@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
     if @subject.nil?
     	@subject = Subject.create!
-    	@subject.data_points = DataPoint.limit(1000)
+    	@subject.data_points = DataPoint.limit(10000)
     end
 
     return @subject

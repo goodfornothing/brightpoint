@@ -10,6 +10,8 @@ class Classification < ActiveRecord::Base
   def as_json(opts = {})
     {
       subject_ids: [subject.id],
+      started: started,
+      ended: ended,
       annotations: annotations
     }
   end

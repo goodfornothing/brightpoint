@@ -4,12 +4,12 @@ class Api::V1::DataPointsController < ApplicationController
   respond_to :json
   
   def index
-    @data_points = DataPoint.where(['start_point >= ?', params[:start] || 0]).limit(params[:size] || 100)
+    @data_points = DataPoint.where(['start_point >= ?', params[:start] || 0]).limit(params[:size] || 1000)
     respond_with @data_points
   end
 
   def chromosome
-    @data_points = DataPoint.where(['chromosome = ?', params[:chromosome]]).limit(params[:size] || 100)
+    @data_points = DataPoint.where(['chromosome = ?', params[:chromosome]]).limit(params[:size] || 1000)
     
     y_points = @data_points.map{|dp| dp.y_point}
     maximum = y_points.max
