@@ -5,10 +5,11 @@ class Subject < ActiveRecord::Base
 	
   def as_json(opts = {})
     {
-      subject_id: id,
+      id: id,
       chromosome: chromosome,
-      classifications: classifications,
-      data_points: data_points
+      metadata: {
+        data_points: data_points
+      }
     }
   end
 

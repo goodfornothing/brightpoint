@@ -7,7 +7,8 @@ Brightpoint::Application.routes.draw do
     	get "data_points" => "data_points#index"
     	get "subjects" => "subjects#index"
       get "subjects/next" => "subjects#next"
-      get "classifications/new" => "classifications#new"
+      get "subjects/:subject/classifications" => "classifications#index"
+      post "classifications" => "classifications#create"
     end
   end
 

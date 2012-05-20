@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120519151230) do
+ActiveRecord::Schema.define(:version => 20120520090619) do
 
   create_table "annotations", :force => true do |t|
     t.integer  "classification_id"
@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(:version => 20120519151230) do
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.datetime "started"
+    t.datetime "ended"
   end
 
   create_table "data_points", :force => true do |t|
