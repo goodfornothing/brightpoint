@@ -2,7 +2,7 @@ desc 'Import the data'
 
 task :segment_data => :environment do 
 
-  # TODO: if density > then easy medium hard
+  # TODO:dif density > then easy medium hard
 
   Subject.destroy_all
 
