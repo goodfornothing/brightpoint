@@ -44,7 +44,7 @@ class Api::V1::ClassificationsController < ApplicationController
   	end
 
     @classification.save
-    render :json => @classification
+    render :json => @classification.to_json, :callback => params[:callback]
 
   end
 

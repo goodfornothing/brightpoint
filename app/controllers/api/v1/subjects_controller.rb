@@ -8,8 +8,13 @@ class Api::V1::SubjectsController < ApplicationController
 		respond_with @subjects
 	end
 
-	def next
+	def first
 		@subject = Subject.first
+		respond_with @subject
+	end
+
+	def next
+		@subject = subject_of_grade([params[:grade]||'easy'],params[:previous_subject])
 		respond_with @subject
 	end
 
