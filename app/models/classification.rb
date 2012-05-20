@@ -1,6 +1,6 @@
 class Classification < ActiveRecord::Base
   
-  attr_accessible :started, :ended
+  attr_accessible :started, :ended, :data_points
 
   belongs_to :user
   belongs_to :subject

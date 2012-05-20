@@ -24,32 +24,27 @@ class Api::V1::ClassificationsController < ApplicationController
 
   	if @classification.valid?
  
-  		params[:annotations].each do |a|
+  		params[:annotations].each do |annotation|
+
+  			annotation = eval(annotation)
 
   			# For the sake of simplicity/perfomance, annotations are created using a 
   			# start and end point on the x-axis for a particular subject rather 
   			# than having our clients pass back a list of data_points
-
-  			data_points = @subject.data_points.delete_if{ |x| !(x.start_point <= a.start_point || x.end_point >= a.end_point) }
+  			data_points = @subject.data_points.delete_if{ |x| !(x.start_point <= annotation[:start] || x.end_point >= annotation[:end]) }
 
   			# Create the annotation
-  			a = Annotation.new(
-  				:classification => @classification,
-  				:data_points => d
-  			)
-
-  			# If it's valid, add it to the classification
-  			if a.save
-  				@classification.annotations << a
-  			end
+  			a = Annotation.new
+  			a.classification = @classification
+  			a.data_points = data_points
+  			a.save
 
   		end
 
-  		@classification.save
-
   	end
-    
-    respond_with @classification
+
+    @classification.save
+    render :json => @classification
 
   end
 

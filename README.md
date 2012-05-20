@@ -1,10 +1,6 @@
 ## Brightpoint API
 
-### Fetch all data points
-
-```bash
-GET http://brightpoint.herokuapp.com/api/v1/data_points.json?start_point=390&size=100
-```
+The following endpoints should closely match the Citizen Science platform.
 
 ### Fetch all subjects
 
@@ -12,10 +8,10 @@ GET http://brightpoint.herokuapp.com/api/v1/data_points.json?start_point=390&siz
 GET http://brightpoint.herokuapp.com/api/v1/subjects.json
 ```
 
-### Fetch a random(ish) subject
+### Fetch a new subject
 
 ```bash
-GET http://brightpoint.herokuapp.com/api/v1/subjects/random.json
+GET http://brightpoint.herokuapp.com/api/v1/subjects/next.json
 ```
 
 ### Fetch all classifications and annotations for a given subject
@@ -28,7 +24,11 @@ GET http://brightpoint.herokuapp.com/api/v1/subjects/1/classifications.json
 
 ```bash
 POST http://brightpoint.herokuapp.com/api/v1/classifications/new.json
-				
+```
+
+With params:
+
+```json			
 {
 	subject_id: integer
 	started: timestamp
@@ -38,4 +38,23 @@ POST http://brightpoint.herokuapp.com/api/v1/classifications/new.json
 		end: x-coordinate
 	]
 }
+```
+
+For example:
+
+```bash
+curl -F 'subject_id=1' \
+	-F 'started=1337508679' \
+	-F 'ended=133750467' \
+	-F 'annotations[]={start:41750, end:51297}' \
+	-F 'annotations[]={start:475, end:41750}' \
+	http://brightpoint.herokuapp.com/api/v1/classifications.json 
+```
+
+## Endpoints unique to BrightPoint
+
+### Fetch all data points for a single chromosome
+
+```bash
+GET http://brightpoint.herokuapp.com/api/v1/chromosome/ch1/
 ```

@@ -3,8 +3,7 @@ class Annotation < ActiveRecord::Base
   belongs_to :classification
   has_and_belongs_to_many :data_points
 
-  validates_presence_of :data_sets
-  validates_presence_of :subject_id
+  validates_presence_of :data_points
 
 	def as_json(opts = {})
     {
