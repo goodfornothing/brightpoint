@@ -10,8 +10,10 @@ GET http://brightpoint.herokuapp.com/api/v1/subjects.json
 
 ### Fetch a new subject 
 
+To fetch the next subject, replace :previous_subject in the below endpoint.
+
 ```bash
-GET http://brightpoint.herokuapp.com/api/v1/subjects/next.json
+GET http://brightpoint.herokuapp.com/api/v1/subjects/:previous_subject/next.json
 ```
 
 ### Fetch all classifications and annotations for a given subject
@@ -28,17 +30,10 @@ POST http://brightpoint.herokuapp.com/api/v1/classifications/new.json
 
 With params:
 
-```javascript		
-{
-	subject_id: integer
-	started: timestamp
-	ended: timestamp
-	annotations: [
-		start: x-coordinate
-		end: x-coordinate
-	]
-}
-```
+subject_id: integer
+started: timestamp
+ended: timestamp
+annotations: array of annotations containing a start and end x-coordinate
 
 For example:
 
